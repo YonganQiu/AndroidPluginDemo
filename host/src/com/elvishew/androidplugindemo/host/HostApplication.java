@@ -13,7 +13,6 @@ public class HostApplication extends Application {
         if (PluginManager.PLUGIN.equals(name)) {
             if (mPluginManager == null) {
                 mPluginManager = new PluginManager(this);
-                mPluginManager.init();
             }
             return mPluginManager;
         }

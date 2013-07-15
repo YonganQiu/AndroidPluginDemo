@@ -4,4 +4,7 @@
     <string name="app_name">AndroidPluginDemo-Host</string>
     <string name="button">Button</string>
     <string name="choose_plugin">Choose plugin</string>
+    <string name="plugin_default">Plugin-Default</string>
+    <string name="plugin_jack">Plugin-Jack</string>
+    <string name="plugin_paul">Plugin-Paul</string>
 </resources>

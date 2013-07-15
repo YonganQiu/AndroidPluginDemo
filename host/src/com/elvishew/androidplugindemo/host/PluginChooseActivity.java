@@ -85,7 +85,7 @@ public class PluginChooseActivity extends Activity implements OnItemClickListene
             iconField.setImageDrawable(plugin.icon);
 
             TextView labelField = (TextView) convertView.findViewById(R.id.label);
-            labelField.setText(plugin.lable);
+            labelField.setText(plugin.label);
 
             return convertView;
         }

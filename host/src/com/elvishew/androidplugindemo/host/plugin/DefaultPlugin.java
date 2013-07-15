@@ -1,4 +1,4 @@
-package com.elvishew.androidplugindemo.host;
+package com.elvishew.androidplugindemo.host.plugin;
 
 import com.elvishew.androidplugindemo.plugin.Plugin;
 

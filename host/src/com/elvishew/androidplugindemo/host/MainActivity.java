@@ -19,8 +19,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btn = (Button) findViewById(R.id.button);
-        final PluginManager pluginManager = new PluginManager(this);
-        pluginManager.init();
+        final PluginManager pluginManager = (PluginManager) getApplicationContext()
+                .getSystemService(PluginManager.PLUGIN);
         btn.setOnClickListener(new OnClickListener() {
 
             @Override
