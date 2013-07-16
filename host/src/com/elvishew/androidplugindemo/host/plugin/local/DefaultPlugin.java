@@ -14,26 +14,27 @@
  * limitations under the License.
  */
 
-package com.elvishew.androidplugindemo.plugin;
+package com.elvishew.androidplugindemo.host.plugin.local;
+
+import com.elvishew.androidplugindemo.plugin.Plugin;
 
 /**
- * Plugin interface, you can add functions to it.
+ * Default plugin, with most typical functions.
  */
-public interface Plugin {
+public class DefaultPlugin implements Plugin {
 
-    /**
-     * Plugin name.
-     */
-    String name();
+    @Override
+    public String name() {
+        return "Default plugin";
+    }
 
-    /**
-     * Plugin function 1.
-     */
-    String function1();
+    @Override
+    public String function1() {
+        return "Default plugin's function1().";
+    }
 
-    /**
-     * Plugin function 2.
-     */
-    String function2();
-
+    @Override
+    public String function2() {
+        return "Default plugin's function2().";
+    }
 }

@@ -14,26 +14,27 @@
  * limitations under the License.
  */
 
-package com.elvishew.androidplugindemo.plugin;
+package com.elvishew.androidplugindemo.host.plugin.local;
+
+import com.elvishew.androidplugindemo.plugin.Plugin;
 
 /**
- * Plugin interface, you can add functions to it.
+ * Jack plugin.
  */
-public interface Plugin {
+public class JackPlugin implements Plugin {
 
-    /**
-     * Plugin name.
-     */
-    String name();
+    @Override
+    public String name() {
+        return "Jack";
+    }
 
-    /**
-     * Plugin function 1.
-     */
-    String function1();
+    @Override
+    public String function1() {
+        return "Jack's function1().";
+    }
 
-    /**
-     * Plugin function 2.
-     */
-    String function2();
-
+    @Override
+    public String function2() {
+        return "Jack's function2().";
+    }
 }

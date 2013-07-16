@@ -14,26 +14,24 @@
  * limitations under the License.
  */
 
-package com.elvishew.androidplugindemo.plugin;
+package com.elvishew.androidplugindemo.lucyplugin;
 
-/**
- * Plugin interface, you can add functions to it.
- */
-public interface Plugin {
+import com.elvishew.androidplugindemo.plugin.Plugin;
 
-    /**
-     * Plugin name.
-     */
-    String name();
+public class PluginImpl implements Plugin {
 
-    /**
-     * Plugin function 1.
-     */
-    String function1();
+    @Override
+    public String name() {
+        return "Lucy";
+    }
 
-    /**
-     * Plugin function 2.
-     */
-    String function2();
+    @Override
+    public String function1() {
+        return "Lucy's function1().";
+    }
 
+    @Override
+    public String function2() {
+        return "Lucy's function2().";
+    }
 }

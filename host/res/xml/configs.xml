@@ -3,16 +3,16 @@
 
     <plugins>
         <plugin
-            class="com.elvishew.androidplugindemo.host.plugin.DefaultPlugin"
+            class="com.elvishew.androidplugindemo.host.plugin.local.DefaultPlugin"
             icon_id="ic_launcher"
             label_id="plugin_default" />
         <plugin
-            class="com.elvishew.androidplugindemo.host.plugin.JackPlugin"
+            class="com.elvishew.androidplugindemo.host.plugin.local.JackPlugin"
             default="true"
             icon_id="ic_launcher"
             label_id="plugin_jack" />
         <plugin
-            class="com.elvishew.androidplugindemo.host.plugin.PaulPlugin"
+            class="com.elvishew.androidplugindemo.host.plugin.local.PaulPlugin"
             icon_id="ic_launcher"
             label_id="plugin_paul" />
     </plugins>
