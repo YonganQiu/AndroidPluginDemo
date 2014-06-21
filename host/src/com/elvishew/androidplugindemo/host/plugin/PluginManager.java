@@ -28,11 +28,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -234,18 +236,33 @@ public class PluginManager {
     private void findThirdPartyPlugins() {
         PackageManager pm = mContext.getPackageManager();
 
-        List<PackageInfo> pkgs = pm.getInstalledPackages(PackageManager.GET_UNINSTALLED_PACKAGES);
+        List<PackageInfo> pkgs = pm.getInstalledPackages(PackageManager.GET_META_DATA);
         String pkgName;
+        ApplicationInfo appInfo;
+        Bundle metaData;
         String pluginClass = null;
         ThirdPartyPluginEntry entry;
         for (PackageInfo pkg : pkgs) {
             String sharedUserId = pkg.sharedUserId;
 
+            // Judge whether it's a plugin.
             if (!SHARE_USER_ID.equals(sharedUserId)) {
                 continue;
             }
+            appInfo = pkg.applicationInfo;
+            metaData = appInfo.metaData;
+            // Must have meta data.
+            if (metaData == null) {
+                continue;
+            }
             pkgName = pkg.packageName;
-            pluginClass = pkgName + ".PluginImpl";
+            pluginClass = metaData.getString("pluginClass");
+
+            // Check if all data ready.
+            if (pluginClass == null) {
+                continue;
+            }
+
             entry = new ThirdPartyPluginEntry(pluginClass, pkg.applicationInfo.sourceDir,
                     mContext.getApplicationInfo().dataDir);
 
